@@ -13,6 +13,7 @@ RUN CGO_ENABLED=0 go build -ldflags="-s -w"
 # Frontend
 FROM node:14-alpine as frontend-build
 WORKDIR /build/etcdv3-browser
+#RUN npx browserslist@latest --update-db
 
 COPY frontend/package.json frontend/yarn.lock ./
 RUN yarn
